@@ -1,33 +1,39 @@
 import React from 'react';
 import { View, Text, Switch, StyleSheet } from 'react-native';
 
-interface SwitchModeProps {
-  isOn: boolean; // Current state (from parent)
-  onToggle: (value: boolean) => void; // Callback to parent
+{
+  /* ===
+  Dark and light mode switch toggle uses useContext value passes from App.jsx
+    === */
 }
 
-const SwitchMode: React.FC<SwitchModeProps> = ({ isOn, onToggle }) => {
+interface SwitchModeProps {
+  isOn: boolean;
+  onToggle: (value: boolean) => void;
+}
+
+function SwitchMode({ isOn, onToggle }: SwitchModeProps) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{isOn ? 'ON' : 'OFF'}</Text>
+      <Text style={styles.text}>{isOn ? 'Dark' : 'Light'}</Text>
       <Switch
         value={isOn}
         onValueChange={onToggle}
-        trackColor={{ false: '#767577', true: '#81b0ff' }}
-        thumbColor={isOn ? '#f5dd4b' : '#f4f3f4'}
         ios_backgroundColor="#3e3e3e"
       />
     </View>
   );
-};
+}
 
 export default SwitchMode;
 
 const styles = StyleSheet.create({
   container: {
+    position: 'absolute',
+    top: 40,
+    right: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
   },
   text: {
     marginRight: 10,
