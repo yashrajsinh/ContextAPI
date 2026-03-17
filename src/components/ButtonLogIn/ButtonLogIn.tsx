@@ -1,14 +1,20 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-
-//type
-interface LoginButtonProps {
-  onPress: () => void;
+//Navigation
+import { useNavigation } from '@react-navigation/native';
+{
+  /* ===
+Navigation button componet responsible for button navigation 
+    === */
 }
 
-export default function LoginButton({ onPress }: LoginButtonProps) {
+export default function ButtonLogIn() {
+  const navigation = useNavigation();
+  function handlePress() {
+    navigation.navigate('User');
+  }
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <TouchableOpacity style={styles.button} onPress={handlePress}>
       <Text style={styles.text}>Log In</Text>
     </TouchableOpacity>
   );

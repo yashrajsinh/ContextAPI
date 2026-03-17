@@ -1,14 +1,20 @@
 import React from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 
-//Interface to define prop data type
-interface InputComponent {
+{
+  /* ===
+Input text component allows placholder props and shows input texts
+    === */
+}
+
+// Interface to define prop data type
+interface InputTextProps {
   placeholder: string;
 }
 
-const InputComponent: React.FC<InputComponent> = ({ placeholder }) => {
+export default function InputText({ placeholder }: InputTextProps) {
   return <TextInput style={styles.input} placeholder={placeholder} />;
-};
+}
 
 const styles = StyleSheet.create({
   input: {
