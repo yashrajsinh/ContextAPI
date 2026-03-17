@@ -7,6 +7,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // Screens
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import UserScreen from './src/screens/UserScreen';
+import { enableScreens } from 'react-native-screens';
+enableScreens();
 
 // Context
 import ThemeProvider from './src/context/ThemeProvider';
