@@ -2,11 +2,11 @@ import React from 'react';
 import { View, Text, Switch, StyleSheet } from 'react-native';
 
 interface SwitchModeProps {
-  isOn: boolean; // Current state (from parent)
-  onToggle: (value: boolean) => void; // Callback to parent
+  isOn: boolean;
+  onToggle: (value: boolean) => void;
 }
 
-const SwitchMode: React.FC<SwitchModeProps> = ({ isOn, onToggle }) => {
+function SwitchMode({ isOn, onToggle }: SwitchModeProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{isOn ? 'ON' : 'OFF'}</Text>
@@ -19,7 +19,7 @@ const SwitchMode: React.FC<SwitchModeProps> = ({ isOn, onToggle }) => {
       />
     </View>
   );
-};
+}
 
 export default SwitchMode;
 

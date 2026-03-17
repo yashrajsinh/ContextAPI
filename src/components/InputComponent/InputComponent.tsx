@@ -2,11 +2,11 @@ import React from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 
 //Interface to define prop data type
-interface DummyInputProps {
+interface InputComponent {
   placeholder: string;
 }
 
-const InputComponent: React.FC<DummyInputProps> = ({ placeholder }) => {
+const InputComponent: React.FC<InputComponent> = ({ placeholder }) => {
   return <TextInput style={styles.input} placeholder={placeholder} />;
 };
 

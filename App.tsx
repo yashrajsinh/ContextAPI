@@ -5,21 +5,21 @@
  * @format
  */
 
-import { StyleSheet, View, Text } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+//Navigation
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import WelcomeScreen from './src/screens/WelcomeScreen';
+import UserScreen from './src/screens/UserScreen';
 
+const Stack = createNativeStackNavigator();
 function App() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView></SafeAreaView>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={WelcomeScreen} />
+        <Stack.Screen name="User" component={UserScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
 export default App;
